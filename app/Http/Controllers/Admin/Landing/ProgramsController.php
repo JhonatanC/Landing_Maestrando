@@ -6,9 +6,12 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use Landing\Repositories\LandingProgram as LandingRepositories;
+
 class ProgramsController extends Controller
 {
     private $request;
+    private $programs;
 
     /*
      * Ingesan a esta seccion solo el administrador
@@ -26,9 +29,9 @@ class ProgramsController extends Controller
      */
     public function index()
     {
-        $programs = DB::table('landing_programs')->paginate(15);
-        dd("entre");
-        return view('admin.landing.index', ['programs' => $programs]);
+        $programs = LandingRepositories::paginate();
+        $title = " Ete es el titulo";
+        return view('admin.landing.index', compact('programs','title'));
     }
 
     /**

@@ -15,12 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function ()
 {
-    Route::group(['namespace' => 'Landing'], function()
+    Route::group(['prefix' => 'landing', 'namespace' => 'Landing'], function ()
     {
-        // Controllers Within The "App\Http\Controllers\Admin\Landing" Namespace
-        Route::resource('programs','ProgramsController');
+        Route::resource('programas','ProgramsController');
     });
-});
 
+});
