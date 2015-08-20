@@ -8,9 +8,10 @@ $baseDir = dirname($vendorDir);
 return array(
     'AdminTableSeeder' => $baseDir . '/database/seeds/AdminTableSeeder.php',
     'CreateLandingPasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_landing_password_resets_table.php',
-    'CreateLandingProgramasTable' => $baseDir . '/database/migrations/2015_08_19_191439_create_landing_programas_table.php',
-    'CreateLandingUniversidadesEmailsTable' => $baseDir . '/database/migrations/2015_08_19_185637_create_landing_universidades_emails_table.php',
-    'CreateLandingUniversidadesTable' => $baseDir . '/database/migrations/2015_08_19_180432_create_landing_universidades_table.php',
+    'CreateLandingProgramsMediaTable' => $baseDir . '/database/migrations/2015_08_19_195928_create_landing_programs_media_table.php',
+    'CreateLandingProgramsTable' => $baseDir . '/database/migrations/2015_08_19_191439_create_landing_programs_table.php',
+    'CreateLandingUniversitiesEmailTable' => $baseDir . '/database/migrations/2015_08_19_185637_create_landing_universities_email_table.php',
+    'CreateLandingUniversitiesTable' => $baseDir . '/database/migrations/2015_08_19_180432_create_landing_universities_table.php',
     'CreateLandingUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_landing_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',

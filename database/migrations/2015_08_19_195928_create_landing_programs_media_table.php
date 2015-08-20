@@ -1,9 +1,10 @@
 <?php
 
+use Landing\Entities;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLandingProgramasMediaTable extends Migration
+class CreateLandingProgramsMediaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +13,7 @@ class CreateLandingProgramasMediaTable extends Migration
      */
     public function up()
     {
-        Schema::create('landing_programas_media', function (Blueprint $table) {
+        Schema::create('landing_programs_media', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('programa_id')->unsigned();
             $table->string('nombre');
@@ -23,7 +24,7 @@ class CreateLandingProgramasMediaTable extends Migration
             //Creamos la relacion entre la tabla landing_universidad_email y landing_university, si devuelve el proceso, ya no la agrega sino que la elimina
             $table->foreign('programa_id')
                 ->references('id')
-                ->on('landing_programas')
+                ->on('landing_programs')
                 ->onDelete('cascade');
             $table->timestamps();
         });
@@ -36,6 +37,6 @@ class CreateLandingProgramasMediaTable extends Migration
      */
     public function down()
     {
-        Schema::drop('landing_programas_medias');
+        Schema::drop('landing_programs_media');
     }
 }

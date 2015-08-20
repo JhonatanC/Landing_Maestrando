@@ -1,6 +1,6 @@
 <?php
 
-use App\LandingUniversidad as Universidad;
+use Landing\Entities\LandingUniversity as University;
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -21,7 +21,8 @@ $factory->define(App\User::class, function ($faker) {
         'remember_token' => str_random(10),
     ];
 });*/
-$factory->defineAs(App\LandingUniversidad::class,'landing_universidad', function ($faker) {
+
+$factory->define(Landing\Entities\LandingUniversity::class, function ($faker) {
     return [
         'nombre'            => $faker->company,
         'color_universidad' => $faker->hexcolor,
@@ -34,8 +35,8 @@ $factory->defineAs(App\LandingUniversidad::class,'landing_universidad', function
     ];
 });
 
-$factory->defineAs(App\LandingPrograma::class,'landing_programa' ,function ($faker) {
-    $id = Universidad::all()->lists('id')->toArray();
+$factory->define(Landing\Entities\LandingProgram::class,function ($faker) {
+    $id = University::all()->lists('id')->toArray();
     return [
         'universidad_id'    => $faker->randomElement($id),
         'nombre_programa'   => $faker->sentence($nbWords = 6),
@@ -59,8 +60,8 @@ $factory->defineAs(App\LandingPrograma::class,'landing_programa' ,function ($fak
     ];
 });
 
-$factory->defineAs(App\LandingUniversidadEmail::class, 'landing_universidad_email',function ($faker) {
-    $id = Universidad::all()->lists('id')->toArray();
+$factory->define(Landing\Entities\LandingUniversityEmail::class, function ($faker) {
+    $id = University::all()->lists('id')->toArray();
     return [
         'universidad_id'     => $faker->randomElement($id),
         'nombre'             => $faker->name,

@@ -1,9 +1,10 @@
 <?php
 
+use Landing\Entities;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLandingUniversidadesEmailsTable extends Migration
+class CreateLandingUniversitiesEmailTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +13,7 @@ class CreateLandingUniversidadesEmailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('landing_universidades_emails', function (Blueprint $table) {
+        Schema::create('landing_universities_email', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('universidad_id')->unsigned();
             $table->string('nombre');
@@ -23,7 +24,7 @@ class CreateLandingUniversidadesEmailsTable extends Migration
             //Creamos la relacion entre la tabla landing_universidad_email y landing_university, si devuelve el proceso, ya no la agrega sino que la elimina
             $table->foreign('universidad_id')
                 ->references('id')
-                ->on('landing_universidades')
+                ->on('landing_universities')
                 ->onDelete('cascade');
 
             $table->timestamps();
@@ -37,6 +38,6 @@ class CreateLandingUniversidadesEmailsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('landing_universidades_emails');
+        Schema::drop('landing_universities_email');
     }
 }

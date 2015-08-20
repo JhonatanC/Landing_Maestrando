@@ -1,9 +1,10 @@
 <?php
 
+use Landing\Entities;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLandingProgramasTable extends Migration
+class CreateLandingProgramsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +13,7 @@ class CreateLandingProgramasTable extends Migration
      */
     public function up()
     {
-        Schema::create('landing_programas', function (Blueprint $table) {
+        Schema::create('landing_programs', function (Blueprint $table) {
             $table->increments('id');
             //Creamos la llave foreana con la tabla landing_university
             $table->integer('universidad_id')->unsigned();
@@ -39,7 +40,7 @@ class CreateLandingProgramasTable extends Migration
             //Creamos la relacion entre la tabla landing_program y landing_university, si devuelve el proceso, ya no la agrega sino que la elimina
             $table->foreign('universidad_id')
                 ->references('id')
-                ->on('landing_universidades')
+                ->on('landing_universities')
                 ->onDelete('cascade');
 
             $table->timestamps();
@@ -53,6 +54,6 @@ class CreateLandingProgramasTable extends Migration
      */
     public function down()
     {
-        Schema::drop('landing_programas');
+        Schema::drop('landing_programs');
     }
 }
