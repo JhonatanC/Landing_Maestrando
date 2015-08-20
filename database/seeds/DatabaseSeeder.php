@@ -13,8 +13,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-
-        // $this->call(UserTableSeeder::class);
+        factory('App\LandingUniversidad', 'landing_universidad', 10)->create();
+        factory('App\LandingPrograma', 'landing_programa', 50)->create();
+        factory('App\LandingUniversidadEmail', 'landing_universidad_email', 30)->create();
+        $this->call(AdminTableSeeder::class);
 
         Model::reguard();
     }
