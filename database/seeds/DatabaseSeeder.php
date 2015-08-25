@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         factory('Landing\Entities\LandingProgram',  50)->create();
         factory('Landing\Entities\LandingUniversityEmail', 30)->create();
         $this->call(AdminTableSeeder::class);
+        $this->call(AdminOptionMenusTableSeeder::class);
 
         Model::reguard();
     }

@@ -24,3 +24,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function ()
     });
 
 });
+
+Route::controllers([
+   'admin'  => 'AdminController',
+]);
+
