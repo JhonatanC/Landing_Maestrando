@@ -8,7 +8,7 @@
     {!! Html::style('css/normalize.css') !!}
     {!! Html::style('css/style.css') !!}
     {!! Html::script('js/vendor/modernizr.js') !!}
-    <link href='http://fonts.googleapis.com/css?family=Bree+Serif|Lora:400,400italic' rel='stylesheet' type='text/css'>
+  <?php //  <link href='http://fonts.googleapis.com/css?family=Bree+Serif|Lora:400,400italic' rel='stylesheet' type='text/css'> ?>
 </head>
 <body class="admin">
 <section class="wrapper-admin">
@@ -16,7 +16,7 @@
         @yield('top')
     </section>
     <section class="sidebar-left show-for-large-up">
-        @include('admin.partials.sidebar-left')
+         @include('admin.partials.sidebar_left')
     </section>
     <section class="content">
         <section class="large-12 medium-12 small-12 columns">

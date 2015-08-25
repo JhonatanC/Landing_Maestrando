@@ -9,14 +9,12 @@ class AdminController extends Controller
     public function getIndex()
     {
        // $title = "Adminstrador Maestrando" ;
-       //$menu_options = App\AdminOptionMenu::all();
+       $options = AdminOptionMenu::where('id',1) -> get();
      // $options =  AdminOptionMenu::all();
         //$menu_options =   App\AdminOptionMenu::all();
       //  dd($menu_options->name);
-
-     return view('admin.layout');
+         dd($options->name);
+     return view('admin.layout', compact('options'));
     }
-
-
 
 }
