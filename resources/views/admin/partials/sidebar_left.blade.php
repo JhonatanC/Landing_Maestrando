@@ -1,8 +1,8 @@
 <nav>
 
-        @foreach($options as $option)
+        @foreach($menuAdmin as $option)
         <li>
-            <a href="{{ $option->url }}" title="{{ $option->title }}"> {{ $option->name }}</a>
+            <a href="{{ $option->url }}" title="{{ $option->title }}" target="{{ $option->target }}"> {{ $option->name }}</a>
         </li>
         @endforeach
 

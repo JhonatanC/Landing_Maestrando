@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdminOptionMenusTable extends Migration
+class CreateAdminOptionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,12 @@ class CreateAdminOptionMenusTable extends Migration
      */
     public function up()
     {
-        Schema::create('admin_option_menus', function (Blueprint $table) {
+        Schema::create('admin_options', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('title');
+            //Id de las opciones disponibles -> 1 = Menu
+            $table->integer('id_option')->unsigned();
+            $table->string('type');
+            $table->json('value');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CreateAdminOptionMenusTable extends Migration
      */
     public function down()
     {
-        Schema::drop('admin_option_menus');
+        Schema::drop('admin_options');
     }
 }

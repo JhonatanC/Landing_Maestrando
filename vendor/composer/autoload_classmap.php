@@ -6,9 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'AdminOptionMenusTableSeeder' => $baseDir . '/database/seeds/AdminOptionMenusTableSeeder.php',
+    'AdminOptionsTableSeeder' => $baseDir . '/database/seeds/AdminOptionsTableSeeder.php',
     'AdminTableSeeder' => $baseDir . '/database/seeds/AdminTableSeeder.php',
-    'CreateAdminOptionMenusTable' => $baseDir . '/database/migrations/2015_08_24_205007_create_admin_option_menus_table.php',
+    'CreateAdminOptionsTable' => $baseDir . '/database/migrations/2015_08_24_205007_create_admin_options_table.php',
     'CreateLandingPasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_landing_password_resets_table.php',
     'CreateLandingProgramsMediaTable' => $baseDir . '/database/migrations/2015_08_19_195928_create_landing_programs_media_table.php',
     'CreateLandingProgramsTable' => $baseDir . '/database/migrations/2015_08_19_191439_create_landing_programs_table.php',

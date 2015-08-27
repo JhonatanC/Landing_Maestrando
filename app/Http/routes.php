@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+/*
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function ()
 {
     Route::group(['prefix' => 'landing', 'namespace' => 'Landing'], function ()
@@ -23,9 +23,16 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function ()
         Route::resource('programas','ProgramsController');
     });
 
-});
+});*/
 
-Route::controllers([
-   'admin'  => 'AdminController',
-]);
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function ()
+{
+    Route::get('/', 'AdminController@index');
+    Route::get('landing', 'LandingController@index');
+    //Route::get('{params}', 'AdminController@resolveController');
+    /*/ Route::get('{params}', function($params){
+
+     });*/
+
+});
 
