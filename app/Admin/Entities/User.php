@@ -1,6 +1,6 @@
 <?php
 
-namespace Landing\Entities;
+namespace App\Admin\Entities;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -17,7 +17,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @var string
      */
-    protected $table = 'users';
+    protected $table = 'maest_users';
 
     /**
      * The attributes that are mass assignable.

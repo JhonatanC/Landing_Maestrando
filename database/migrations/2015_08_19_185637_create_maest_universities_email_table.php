@@ -4,7 +4,7 @@ use Landing\Entities;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLandingProgramsMediaTable extends Migration
+class CreateMaestUniversitiesEmailTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,20 @@ class CreateLandingProgramsMediaTable extends Migration
      */
     public function up()
     {
-        Schema::create('landing_programs_media', function (Blueprint $table) {
+        Schema::create('maest_universities_email', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('programa_id')->unsigned();
+            $table->integer('universidad_id')->unsigned();
             $table->string('nombre');
-            $table->string('url');
-            $table->string('height');
-            $table->string('width');
-            $table->string('type');
+            $table->string('apellido');
+            $table->string('email');
+            $table->string('telefono');
+            $table->string('cargo');
             //Creamos la relacion entre la tabla landing_universidad_email y landing_university, si devuelve el proceso, ya no la agrega sino que la elimina
-            $table->foreign('programa_id')
+            $table->foreign('universidad_id')
                 ->references('id')
-                ->on('landing_programs')
+                ->on('maest_universities')
                 ->onDelete('cascade');
+
             $table->timestamps();
         });
     }
@@ -37,6 +38,6 @@ class CreateLandingProgramsMediaTable extends Migration
      */
     public function down()
     {
-        Schema::drop('landing_programs_media');
+        Schema::drop('maest_universities_email');
     }
 }

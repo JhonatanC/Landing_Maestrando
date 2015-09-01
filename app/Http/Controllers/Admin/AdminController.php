@@ -7,6 +7,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Database\Eloquent\Model;
+
 use App\AdminOptions;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
@@ -17,7 +19,6 @@ use App\Http\Controllers\Admin;
 class AdminController extends Controller
 {
     private $menuAdmin;
-    protected $controllerClassName;
 
     public function __construct(AdminOptions $adminOptions)
     {
@@ -30,8 +31,16 @@ class AdminController extends Controller
 
     public function index()
     {
-        $menuAdmin = $this->menuAdmin;
+        //$menuAdmin = $this->menuAdmin;
+        $this->obtenerMenu();
         return view('admin.layout', compact('menuAdmin'));
     }
+
+    /*public function obtenerMenu()
+    {
+        $this->$menuOpt = \App\AdminOptions;
+        $this->$menuOpt->getMenuAdmin();
+        //return $menuOpt;
+    }*/
 
 }

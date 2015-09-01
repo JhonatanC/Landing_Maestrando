@@ -28,7 +28,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function ()
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function ()
 {
     Route::get('/', 'AdminController@index');
-    Route::get('landing', 'LandingController@index');
+    Route::resource('landing', 'LandingController');
     //Route::get('{params}', 'AdminController@resolveController');
     /*/ Route::get('{params}', function($params){
 

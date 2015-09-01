@@ -4,7 +4,7 @@ use Landing\Entities;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLandingUniversitiesTable extends Migration
+class CreateMaestUniversitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateLandingUniversitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('landing_universities', function (Blueprint $table) {
+        Schema::create('maest_universities', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
             $table->string('color_universidad')->nullable();
@@ -34,6 +34,6 @@ class CreateLandingUniversitiesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('landing_universities');
+        Schema::drop('maest_universities');
     }
 }

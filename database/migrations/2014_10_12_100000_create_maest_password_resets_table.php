@@ -4,7 +4,7 @@ use Landing\Entities;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLandingPasswordResetsTable extends Migration
+class CreateMaestPasswordResetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateLandingPasswordResetsTable extends Migration
      */
     public function up()
     {
-        Schema::create('landing_password_resets', function (Blueprint $table) {
+        Schema::create('maest_password_resets', function (Blueprint $table) {
             $table->string('email')->index();
             $table->string('token')->index();
             $table->timestamp('created_at');
@@ -27,6 +27,6 @@ class CreateLandingPasswordResetsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('landing_password_resets');
+        Schema::drop('maest_password_resets');
     }
 }

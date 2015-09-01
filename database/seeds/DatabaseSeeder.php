@@ -13,9 +13,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-        factory('Landing\Entities\LandingUniversity',  10)->create();
-        factory('Landing\Entities\LandingProgram',  50)->create();
-        factory('Landing\Entities\LandingUniversityEmail', 30)->create();
+        factory('App\Admin\Entities\MaestUniversity',  10)->create();
+        factory('Landing\Entities\MaestLanding',  50)->create();
+        factory('App\Admin\Entities\MaestUniversityEmail', 30)->create();
         $this->call(AdminTableSeeder::class);
         $this->call(AdminOptionsTableSeeder::class);
 

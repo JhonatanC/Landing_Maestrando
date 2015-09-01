@@ -1,6 +1,6 @@
 <?php
 
-use Landing\Entities\LandingUniversity as University;
+use App\Admin\Entities\MaestUniversity as University;
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -22,7 +22,8 @@ $factory->define(App\User::class, function ($faker) {
     ];
 });*/
 
-$factory->define(Landing\Entities\LandingUniversity::class, function ($faker) {
+
+$factory->define(App\Admin\Entities\MaestUniversity::class, function ($faker) {
     return [
         'nombre'            => $faker->company,
         'color_universidad' => $faker->hexcolor,
@@ -35,32 +36,33 @@ $factory->define(Landing\Entities\LandingUniversity::class, function ($faker) {
     ];
 });
 
-$factory->define(Landing\Entities\LandingProgram::class,function ($faker) {
+$factory->define(Landing\Entities\MaestLanding::class,function ($faker) {
     $id = University::all()->lists('id')->toArray();
     return [
-        'universidad_id'    => $faker->randomElement($id),
-        'nombre_programa'   => $faker->sentence($nbWords = 6),
-        'tipo_formacion'    => $faker-> randomElement($array = array ('Doctorado','Maestría y/o Especializacion','Diplomado','Seminario','Curso')),
-        'ciudad'            => $faker->city,
-        'pais'              => $faker->country,
-        'modalidad'         => $faker-> randomElement($array = array ('Virtual','Presencial','Semipresencial')),
-        'duracion'          => $faker->biasedNumberBetween($min = 1, $max = 36, $function = 'sqrt').' meses',
-        'contenido_html'    => $faker->text($maxNbChars = 200),
-        'descripcion_corta' => $faker->text($maxNbChars = 50),
-        'inicio_programa'   => $faker->dateTime($max = 'now'),
-        'cierre_matricula'  => $faker->dateTime($max = 'now'),
-        'url_img_encabezado'=> $faker->imageUrl($width = 640, $height = 480),
-        'color_programa'    => $faker->hexcolor,
-        'asunto_email'      => $faker->sentence($nbWords = 4),
-        'meta_title'        => $faker->sentence($nbWords = 8),
-        'meta_description'  => $faker->text($maxNbChars = 50),
-        'observaciones'     => $faker->text($maxNbChars = 150),
-        'inicio_publicacion'=> $faker->dateTime($max = 'now'),
-        'fin_publicacion'   => $faker->dateTime($max = 'now')
+        'maest_university_id'    => $faker->randomElement($id),
+        'nombre_programa'        => $faker->sentence($nbWords = 6),
+        'tipo_formacion'         => $faker-> randomElement($array = array ('Doctorado','Maestría y/o Especializacion','Diplomado','Seminario','Curso')),
+        'ciudad'                 => $faker->city,
+        'pais'                   => $faker->country,
+        'modalidad'              => $faker-> randomElement($array = array ('Virtual','Presencial','Semipresencial')),
+        'duracion'               => $faker->biasedNumberBetween($min = 1, $max = 36, $function = 'sqrt').' meses',
+        'contenido_html'         => $faker->text($maxNbChars = 200),
+        'descripcion_corta'      => $faker->text($maxNbChars = 50),
+        'inicio_programa'        => $faker->dateTime($max = 'now'),
+        'cierre_matricula'       => $faker->dateTime($max = 'now'),
+        'url_img_encabezado'     => $faker->imageUrl($width = 640, $height = 480),
+        'color_programa'         => $faker->hexcolor,
+        'asunto_email'           => $faker->sentence($nbWords = 4),
+        'meta_title'             => $faker->sentence($nbWords = 8),
+        'meta_description'       => $faker->text($maxNbChars = 50),
+        'observaciones'          => $faker->text($maxNbChars = 150),
+        'inicio_publicacion'     => $faker->dateTime($max = 'now'),
+        'fin_publicacion'        => $faker->dateTime($max = 'now'),
+        'estado'                 => "1"
     ];
 });
 
-$factory->define(Landing\Entities\LandingUniversityEmail::class, function ($faker) {
+$factory->define(App\Admin\Entities\MaestUniversityEmail::class, function ($faker) {
     $id = University::all()->lists('id')->toArray();
     return [
         'universidad_id'     => $faker->randomElement($id),

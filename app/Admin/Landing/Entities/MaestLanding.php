@@ -4,9 +4,9 @@ namespace Landing\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 
-class LandingProgram extends Model
+class MaestLanding extends Model
 {
-    public $table = "landing_programs";
+    protected $table = 'maest_landing';
 
 
 }

@@ -7,7 +7,7 @@
     {!! Html::style('css/foundation.css') !!}
     {!! Html::style('css/normalize.css') !!}
     {!! Html::style('css/style.css') !!}
-    {!! Html::script('js/vendor/modernizr.js') !!}
+
   <?php //  <link href='http://fonts.googleapis.com/css?family=Bree+Serif|Lora:400,400italic' rel='stylesheet' type='text/css'> ?>
 </head>
 <body class="admin">
@@ -26,6 +26,7 @@
 </section>
 
 {!! Html::script('js/vendor/jquery.js') !!}
+{!! Html::script('js/vendor/modernizr.js') !!}
 {!! Html::script('js/foundation.min.js') !!}
 @yield('scripts')
 </body>

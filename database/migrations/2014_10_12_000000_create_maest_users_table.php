@@ -1,9 +1,10 @@
 <?php
-
+use Landing\Entities;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdminOptionsTable extends Migration
+
+class CreateMaestUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +13,13 @@ class CreateAdminOptionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('admin_options', function (Blueprint $table) {
+        Schema::create('maest_users', function (Blueprint $table) {
             $table->increments('id');
-            //Id de las opciones disponibles -> 1 = Menu
-            $table->integer('id_option')->unsigned();
-            $table->string('type');
-            $table->json('value');
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('password', 60);
+            $table->enum('role',['admin','editor','user']);
+            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateAdminOptionsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('admin_options');
+        Schema::drop('maest_users');
     }
 }
