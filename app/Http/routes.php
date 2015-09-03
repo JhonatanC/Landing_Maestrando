@@ -11,6 +11,10 @@
 |
 */
 
+/*
+ * Comentario adicional
+ */
+
 Route::get('/', function () {
     return view('welcome');
 });
